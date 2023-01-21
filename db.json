@@ -1,0 +1,101 @@
+{
+  "usuario": [
+    {
+      "nombre": "Seba",
+      "contraseña": "1234",
+      "tipo": "admin",
+      "id": 1
+    },
+    {
+      "nombre": "Andres",
+      "contraseña": "1234",
+      "tipo": "cliente",
+      "id": 2
+    },
+    {
+      "nombre": "Alberto",
+      "contraseña": "1234",
+      "tipo": "Quimico Farmaceutico",
+      "id": 3
+    },
+    {
+      "nombre": "Oso",
+      "contraseña": "1234",
+      "tipo": "cliente",
+      "id": 4
+    }
+  ],
+  "producto": [
+    {
+      "categoria": "cremas",
+      "marca": "Avon",
+      "nombre": "Crema de chocolate",
+      "id": 1
+    },
+    {
+      "categoria": "medicamento",
+      "marca": "Doctor simi",
+      "nombre": "Ibuprofeno",
+      "id": 2
+    },
+    {
+      "categoria": "cremas",
+      "marca": "Nivea",
+      "nombre": "Crema facial",
+      "id": 3
+    },
+    {
+      "categoria": "medicamento",
+      "marca": "Cruz verde",
+      "nombre": "Paracetamol",
+      "id": 4
+    },
+    {
+      "categoria": "medicamento",
+      "marca": "Cruz roja",
+      "nombre": "Paracetamol",
+      "id": 5
+    },
+    {
+      "categoria": "cremas",
+      "marca": "Cicatricure",
+      "nombre": "Cicatricure age care reafirmante",
+      "id": 6
+    },
+    {
+      "categoria": "perfumes",
+      "marca": "Antonio Banderas",
+      "nombre": "Antonio Banderas Blue Edition",
+      "id": 7
+    },
+    {
+      "categoria": "perfumes",
+      "marca": "CR7",
+      "nombre": "Cristiano Ronaldo Red",
+      "id": 8
+    },
+    {
+      "categoria": "perfumes",
+      "marca": "Calvin Klein",
+      "nombre": "Calvin Klein Black",
+      "id": 9
+    },
+    {
+      "categoria": "perfumes",
+      "marca": "Zara",
+      "nombre": "Rose Gourmand",
+      "id": 10
+    },
+    {
+      "nombre": "Pastillas",
+      "marca": "DR simi",
+      "imagen": "data:image/jpeg;base64,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",
+      "precio": 5000,
+      "categoria": "medicamento",
+      "detalle": "Paracetamol",
+      "receta": "C:\\fakepath\\medicamento.jpg",
+      "cantidad": 1,
+      "id": 11
+    }
+  ]
+}

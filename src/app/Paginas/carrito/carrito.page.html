@@ -1,0 +1,98 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Carrito</ion-title>
+  </ion-toolbar>
+
+  <style>
+    .btn-1  {
+    border:0px;
+  padding: 0px;
+  margin-left: 75px;
+  margin-top:0px;
+    }
+    .btn-2 {
+  border:0px;
+  padding: 0px;
+  margin-left: 30px;
+  margin-top:0px;
+  }
+
+
+  .btn-3  {
+  border:0px;
+  padding: 0px;
+  margin-left: 90px;
+  margin-top:0px;
+    }
+
+</style>
+
+
+
+</ion-header>
+
+<ion-content>
+
+  <div class="ion-text-end">
+    <ion-button (click)="close()" fill="clear" color="dark">
+      <ion-icon name="close" slot="start"></ion-icon>
+    </ion-button>
+  </div>
+
+      <div class="principal">
+              <ion-card  class="tras">
+
+                <ion-card-title class="btn-1">Mi Carrito</ion-card-title>
+                <br>
+                <ion-row>
+                  <ion-col size="8" class="ion-text-center">
+                    <ion-label>
+                        <h3>Producto: Ibuprofeno</h3>
+                    </ion-label>
+                </ion-col>
+
+                <ion-col size="6" class="ion-text-center">
+                  <ion-label>
+                      <h3>Precio: $1.583</h3>
+                  </ion-label>
+              </ion-col>
+              <ion-col size="6" class="ion-text-center"></ion-col>
+
+
+                </ion-row>
+
+                  <ion-card-content >
+
+
+
+
+                          <ion-col size="9" class="ion-text-left">
+                              <ion-label color="secondary">
+
+                              </ion-label>
+                          </ion-col>
+                          <ion-col size="2" >
+                              <ion-button >
+                                  <ion-icon name="card" style="height: 40px; width: 40px;" >
+                                  </ion-icon>
+                              </ion-button>
+                          </ion-col>
+                          <ion-col size="2" >
+                              <ion-button >
+                                  <ion-icon name="trash" style="height: 40px; width: 40px;" >
+                                  </ion-icon>
+                              </ion-button>
+                          </ion-col>
+
+              </ion-card-content>
+              </ion-card>
+              <ion-card>
+                <ion-card-content>
+                  <h1 class="btn-2">Total : $1583</h1>
+                </ion-card-content>
+              </ion-card>
+              <br>
+              <ion-button class="btn-3" >Pagar </ion-button>
+      </div>
+  </ion-content>
+

@@ -1,0 +1,77 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>modificarUsuario</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+
+
+
+  <ion-card>
+
+    <form [formGroup]="formulario" novalidate (ngSubmit)="modificar()" >
+
+      <ion-item>
+        <ion-label position="floating">Nombre</ion-label>
+        <ion-input type="text" formControlName="nombre"></ion-input>
+        <ion-note
+        slot="error"
+          *ngIf="campo('nombre').invalid  && campo('nombre').errors && campo('nombre').errors.required && fueTocado('nombre') "
+        >
+          Este campo es requerido
+        </ion-note>
+        <ion-note
+        slot="error"
+          *ngIf="campo('nombre').invalid  && campo('nombre').errors && campo('nombre').errors.maxlength && fueTocado('nombre') "
+        >
+          Los caracteres maximos son 30
+        </ion-note>
+        <ion-note
+        slot="error"
+          *ngIf="campo('nombre').invalid  && campo('nombre').errors && campo('nombre').errors.minlength && fueTocado('nombre') "
+        >
+          Los caracteres minimos son 3
+        </ion-note>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Tipo Rol</ion-label>
+        <ion-input type="text"  formControlName="tipo"></ion-input>
+        <ion-note
+        slot="error"
+          *ngIf="campo('tipo').invalid  && campo('tipo').errors && campo('tipo').errors.required && fueTocado('tipo') "
+        >
+          Este campo es requerido
+        </ion-note>
+        <ion-note
+        slot="error"
+          *ngIf="campo('tipo').invalid  && campo('tipo').errors && campo('tipo').errors.maxlength && fueTocado('tipo') "
+        >
+          Los caracteres maximos son 30
+        </ion-note>
+        <ion-note
+        slot="error"
+          *ngIf="campo('tipo').invalid  && campo('tipo').errors && campo('tipo').errors.minlength && fueTocado('tipo') "
+        >
+          Los caracteres minimos son 3
+        </ion-note>
+      </ion-item>
+
+      <ion-item>
+        <ion-button
+          [disabled]="formulario.invalid "
+        role="submit" type="submit">
+          Guardar
+        </ion-button>
+      </ion-item>
+    </form>
+  </ion-card>
+
+
+
+
+
+</ion-content>

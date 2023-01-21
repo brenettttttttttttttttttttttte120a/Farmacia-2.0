@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>jaja</ion-title>
+
+
+    <ion-toolbar color="primary">
+      <ion-searchbar color="warning" placeholder = "Buscar nombre o marca o categoria" [debounce]="1000" animated (ionChange)="handleChange($event)"></ion-searchbar>
+    </ion-toolbar>
+  </ion-toolbar>
+
+</ion-header>
+<ion-content>
+
+
+  <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-list>
+    <ion-card color="primary" (click)="openMedicamento()" >
+      <ion-card-header >
+        <ion-card-title >
+          <h1 id = "card">
+           medicamentos
+          </h1></ion-card-title>
+      </ion-card-header>
+    </ion-card>
+    <br>
+    <ion-card color="primary" (click)="openCremas()" >
+      <ion-card-header >
+        <ion-card-title >
+          <h1 id = "card">
+           cremas
+          </h1></ion-card-title>
+      </ion-card-header>
+
+    </ion-card>
+
+    <br>
+    <ion-card color="primary" (click)="openPerfumes()" >
+      <ion-card-header >
+        <ion-card-title >
+          <h1 id = "card">
+           perfumes
+          </h1></ion-card-title>
+      </ion-card-header>
+
+  </ion-card>
+
+
+  </ion-list>
+</ion-content>
+
+

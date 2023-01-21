@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Perfumes</ion-title>
+
+
+    <ion-toolbar color="primary">
+      <ion-searchbar color="warning" placeholder = "Buscar nombre o marca o categoria" [debounce]="1000" animated (ionChange)="handleChange($event)"></ion-searchbar>
+    </ion-toolbar>
+  </ion-toolbar>
+
+</ion-header>
+<ion-content>
+
+
+  <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-list>
+    <ion-card color="primary" *ngFor="let detalles of resultados">
+      <ion-card-header >
+        <ion-card-title >
+          <h1 id = "card">
+            {{detalles.nombre}} {{detalles.marca}}
+          </h1></ion-card-title>
+      </ion-card-header>
+      <img [src]="detalles.img" alt="">
+      <h3 id = "card">{{detalles.categoria}}</h3>
+    </ion-card>
+  </ion-list>
+</ion-content>
+<ion-footer>
+  <ion-toolbar >
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="['/producto']">Volver</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

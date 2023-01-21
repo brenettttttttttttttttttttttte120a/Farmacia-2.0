@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Registro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+  <form [formGroup]="formulario2" novalidate (ngSubmit)="guardarCliente()" >
+    <ion-item>
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input type="text" formControlName="nombre"></ion-input>
+      <ion-note
+      slot="error"
+        *ngIf="campo('nombre').invalid  && campo('nombre').errors && campo('nombre').errors.required && fueTocado('nombre') "
+      >
+        Este campo es requerido
+      </ion-note>
+      <ion-note
+      slot="error"
+        *ngIf="campo('nombre').invalid  && campo('nombre').errors && campo('nombre').errors.maxlength && fueTocado('nombre') "
+      >
+        Los caracteres maximos son 10
+      </ion-note>
+      <ion-note
+      slot="error"
+        *ngIf="campo('nombre').invalid  && campo('nombre').errors && campo('nombre').errors.minlength && fueTocado('nombre') "
+      >
+        Los caracteres minimos son 3
+      </ion-note>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input type="password" formControlName="contraseña"></ion-input>
+      <ion-note
+      slot="error"
+        *ngIf="campo('contraseña').invalid  && campo('contraseña').errors && campo('contraseña').errors.required && fueTocado('contraseña') "
+      >
+        Este campo es requerido
+      </ion-note>
+      <ion-note
+      slot="error"
+        *ngIf="campo('contraseña').invalid  && campo('contraseña').errors && campo('contraseña').errors.maxlength && fueTocado('contraseña') "
+      >
+        Los caracteres maximos son 10
+      </ion-note>
+      <ion-note
+      slot="error"
+        *ngIf="campo('contraseña').invalid  && campo('contraseña').errors && campo('contraseña').errors.minlength && fueTocado('contraseña') "
+      >
+        Los caracteres minimos son 3
+      </ion-note>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-button
+        [disabled]="formulario2.invalid"
+
+      role="submit" type="submit" >
+        Guardar
+      </ion-button>
+      <ion-button [routerLink]="['/login']">Volver</ion-button>
+    </ion-item>
+  </form>
+</ion-card>
+</ion-content>

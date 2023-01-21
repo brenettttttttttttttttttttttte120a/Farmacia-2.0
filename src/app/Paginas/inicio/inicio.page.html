@@ -1,0 +1,88 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Menu Principal</ion-title>
+  </ion-toolbar>
+
+
+</ion-header>
+
+<ion-content>
+
+
+
+
+
+
+
+
+  <ion-slides>
+    <ion-slide>
+      <div class="slide">
+        <img src="https://d1tjllbjmslitt.cloudfront.net/spree/products/86001/large_webp/1768333.webp?1671802354" />
+        <h2>Ibuprofeno </h2>
+        <p>
+          Ibuprofeno 600 mg x 20 Comprimidos <br>Principio Activo: Ibuprofeno Forma Farmacéutica: Oral
+        </p>
+      </div>
+    </ion-slide>
+
+
+
+
+
+
+
+
+    <ion-slide>
+      <img src="https://d1tjllbjmslitt.cloudfront.net/spree/products/83862/large_webp/2202026.webp?1668457177" />
+      <h2>Ketoprofeno</h2>
+      <p>
+        Ketoprofeno 50mg x 20 Cápsulas <br> Principio Activo: Ketoprofeno Forma Farmacéutica: Cápsulas
+      </p>
+    </ion-slide>
+
+    <ion-slide>
+      <img src="https://d1tjllbjmslitt.cloudfront.net/spree/products/80170/large_webp/2835313.webp?1663806904" />
+      <h2> Hiperflex</h2>
+      <p>
+        Hiperflex 4.7 Grs. 35 Sobres <br> Principio Activo: Condroitina <br> Forma Farmaceutica: Polvo Solución Oral
+      </p>
+    </ion-slide>
+
+    <ion-slide>
+      <img
+        src="https://d1tjllbjmslitt.cloudfront.net/spree/products/83918/large_webp/ECommerce-Doraliv.webp?1668538829" />
+      <h2>NOTTS</h2>
+      <p>
+        Doraliv Ibuprofeno 600 mg x 10 Cápsulas <br>Principio Activo: Ibuprofeno Forma Farmacéutica: Oral
+      </p>
+    </ion-slide>
+  </ion-slides>
+
+
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-tabs>
+      <ion-tab-bar slot="bottom">
+        <ion-tab-button [routerLink]="['/producto']" >
+          <ion-icon name="bag-handle-outline"></ion-icon>
+          <ion-label>Productos</ion-label>
+
+        </ion-tab-button>
+
+        <ion-tab-button [routerLink]="['/login']"  >
+          <ion-icon name="person-circle" aria-hidden="true"></ion-icon>
+          <ion-label>Usuario</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button (click)="openCart()" >
+          <ion-icon name="cart" class="cart-icon"></ion-icon>
+          <ion-label>Carrito</ion-label>
+        </ion-tab-button>
+      </ion-tab-bar>
+    </ion-tabs>
+  </ion-toolbar>
+</ion-footer>

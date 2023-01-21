@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Roles</ion-title>
+
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+
+    <ion-toolbar color="primary">
+      <ion-searchbar color="warning" placeholder = "Buscar nombre o marca o categoria" [debounce]="1000" animated (ionChange)="handleChange($event)"></ion-searchbar>
+    </ion-toolbar>
+  </ion-toolbar>
+
+</ion-header>
+<ion-content>
+
+
+  <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-list>
+    <ion-card color="primary" *ngFor="let detalles of results">
+      <ion-card-header >
+        <ion-card-title >
+          <h1 id = "card">
+            {{detalles.nombre}}
+          </h1></ion-card-title>
+      </ion-card-header>
+      <img [src]="detalles.img" alt="">
+      <h3 id = "card">{{detalles.tipo}}</h3>
+      <ion-card-content style="display: flex; justify-content: space-between;">
+        <ion-button [routerLink]="['/eliminarUsuario',detalles.id]" color="fuerte">
+          <ion-icon name="trash-outline"></ion-icon>
+        </ion-button>
+        <ion-button [routerLink]="['/modificarUsuario', detalles.id]" color="tertiary">
+          <ion-icon name="pencil-outline"></ion-icon>
+        </ion-button>
+      </ion-card-content>
+
+
+    </ion-card>
+  </ion-list>
+</ion-content>

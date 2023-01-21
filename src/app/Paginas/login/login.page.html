@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-toolbar>
+
+    <ion-title>Login</ion-title>
+
+
+
+  </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-card style="text-align:center">
+    <ion-card-header>
+      <ion-card-title color="dark">Login</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <form [formGroup]="formularioLogin">
+        <ion-item  >
+          <ion-label position="floating" style="font-weight:bold">Nombre</ion-label>
+          <ion-input formControlName="nombre"></ion-input>
+          <ion-note
+      slot="error"
+        *ngIf="campo('nombre').invalid  && campo('nombre').errors && campo('nombre').errors.required && fueTocado('nombre') "
+       >
+       Este campo es obligatorio
+      </ion-note>
+      <ion-note
+      slot="error"
+        *ngIf="campo('nombre').invalid  && campo('nombre').errors && campo('nombre').errors.maxlength && fueTocado('nombre') "
+      >
+        Los caracteres maximos son 20
+      </ion-note>
+      <ion-note
+      slot="error"
+        *ngIf="campo('nombre').invalid  && campo('nombre').errors && campo('nombre').errors.minlength && fueTocado('nombre') "
+      >
+        Los caracteres minimos son 3
+      </ion-note>
+        </ion-item>
+<ion-item>
+          <ion-label position="floating" style="font-weight:bold">Contraseña</ion-label>
+          <ion-input formControlName="contraseña" type="password"></ion-input>
+          <ion-note
+      slot="error"
+        *ngIf="campo('contraseña').invalid  && campo('contraseña').errors && campo('contraseña').errors.required && fueTocado('contraseña') "
+       >
+       Este campo es obligatorio
+      </ion-note>
+      <ion-note
+      slot="error"
+        *ngIf="campo('contraseña').invalid  && campo('contraseña').errors && campo('contraseña').errors.maxlength && fueTocado('contraseña') "
+      >
+        Los caracteres maximos son 20
+      </ion-note>
+      <ion-note
+      slot="error"
+        *ngIf="campo('contraseña').invalid  && campo('contraseña').errors && campo('contraseña').errors.minlength && fueTocado('contraseña') "
+      >
+        Los caracteres minimos son 3
+      </ion-note>
+        </ion-item>
+      </form>
+      <br>
+      <ion-button (click)="ingresar()" color="danger" >
+        Ingresar
+      </ion-button>
+      <ion-button [routerLink]="['/registro']"color="danger" style="margin-left: 10px">Registrarse</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+<ion-footer>
+  <ion-toolbar >
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="['/producto']">Volver</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>
