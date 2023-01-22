@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { IngresadoGuard } from './Guardias/ingresado.guard';
 
 const routes: Routes = [
 
@@ -70,19 +71,27 @@ const routes: Routes = [
   },
   {
     path: 'producto-qf',
-    loadChildren: () => import('./Paginas/producto-qf/producto-qf.module').then( m => m.ProductoQfPageModule)
+    loadChildren: () => import('./Paginas/producto-qf/producto-qf.module').then( m => m.ProductoQfPageModule),
+    canActivate:[IngresadoGuard]
   },
   {
     path: 'cremas-qf',
-    loadChildren: () => import('./Paginas/cremas-qf/cremas-qf.module').then( m => m.CremasQfPageModule)
+    loadChildren: () => import('./Paginas/cremas-qf/cremas-qf.module').then( m => m.CremasQfPageModule),
+    canActivate:[IngresadoGuard]
   },
   {
     path: 'medicamentos-qf',
-    loadChildren: () => import('./Paginas/medicamentos-qf/medicamentos-qf.module').then( m => m.MedicamentosQfPageModule)
+    loadChildren: () => import('./Paginas/medicamentos-qf/medicamentos-qf.module').then( m => m.MedicamentosQfPageModule),
+    canActivate:[IngresadoGuard]
   },
   {
     path: 'perfumes-qf',
-    loadChildren: () => import('./Paginas/perfumes-qf/perfumes-qf.module').then( m => m.PerfumesQfPageModule)
+    loadChildren: () => import('./Paginas/perfumes-qf/perfumes-qf.module').then( m => m.PerfumesQfPageModule),
+    canActivate:[IngresadoGuard]
+  },
+  {
+    path: 'e404',
+    loadChildren: () => import('./Paginas/e404/e404.module').then( m => m.E404PageModule)
   },
 ];
 

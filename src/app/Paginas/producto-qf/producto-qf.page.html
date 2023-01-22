@@ -1,9 +1,9 @@
 <ion-header>
-  <ion-toolbar color="primary">
-    <ion-title>jaja</ion-title>
+  <ion-toolbar color="">
+    <ion-title>Categoria</ion-title>
 
 
-    <ion-toolbar color="primary">
+    <ion-toolbar color="">
       <ion-searchbar color="warning" placeholder = "Buscar nombre o marca o categoria" [debounce]="1000" animated (ionChange)="handleChange($event)"></ion-searchbar>
     </ion-toolbar>
   </ion-toolbar>
@@ -16,8 +16,8 @@
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
   <ion-list>
-    <ion-card color="primary" (click)="openMedicamento()" >
-      <ion-card-header >
+    <ion-card color="" (click)="openMedicamento()" >
+      <ion-card-header  >
         <ion-card-title >
           <h1 id = "card">
            medicamentos
@@ -25,7 +25,7 @@
       </ion-card-header>
     </ion-card>
     <br>
-    <ion-card color="primary" (click)="openCremas()" >
+    <ion-card color="" (click)="openCremas()" >
       <ion-card-header >
         <ion-card-title >
           <h1 id = "card">
@@ -36,7 +36,7 @@
     </ion-card>
 
     <br>
-    <ion-card color="primary" (click)="openPerfumes()" >
+    <ion-card color="" (click)="openPerfumes()" >
       <ion-card-header >
         <ion-card-title >
           <h1 id = "card">

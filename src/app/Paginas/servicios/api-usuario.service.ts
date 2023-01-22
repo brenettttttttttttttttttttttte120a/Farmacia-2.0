@@ -65,6 +65,14 @@ public agregarUsuario(usuario: Usuario){
     return this.http.delete(`${this.url_usuario}/${id}`)
   }
 
+  public tipoUsuario(id){
+    localStorage.setItem('tipo', id);
+  }
+
+  public retornarTipo(){
+    return localStorage.getItem('tipo');
+  }
+
 
 
 }
