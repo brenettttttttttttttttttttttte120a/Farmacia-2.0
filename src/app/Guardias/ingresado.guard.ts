@@ -22,6 +22,20 @@ export class IngresadoGuard implements CanActivate {
         this.navCtrl.navigateRoot('/e404')
         return false;
       }
+
   }
+
+  canActivate1(
+    route: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+      if(localStorage.getItem('tipo')==="admin"){
+        return true;
+      }else{
+        this.navCtrl.navigateRoot('/e404')
+        return false;
+      }
+  }
+
+
 
 }

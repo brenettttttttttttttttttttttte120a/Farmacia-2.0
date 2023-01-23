@@ -1,9 +1,9 @@
 <ion-header>
-  <ion-toolbar color="primary">
+  <ion-toolbar >
     <ion-title>Medicamentos</ion-title>
 
 
-    <ion-toolbar color="primary">
+    <ion-toolbar >
       <ion-searchbar color="warning" placeholder = "Buscar nombre o marca o categoria" [debounce]="1000" animated (ionChange)="handleChange($event)"></ion-searchbar>
     </ion-toolbar>
   </ion-toolbar>
@@ -16,7 +16,7 @@
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
   <ion-list>
-    <ion-card color="primary" *ngFor="let detalles of resultados">
+    <ion-card *ngFor="let detalles of resultados">
       <ion-img [src]="detalles.imagen"></ion-img>
       <ion-card-header >
         <ion-card-title >

@@ -48,12 +48,6 @@ export class LoginPage implements OnInit {
   }
 
 
-
-
-
-
-
-
   ngOnInit() {
     this.apiUsuario.getUsuario().subscribe(data => (this.usuarios = data));
   }

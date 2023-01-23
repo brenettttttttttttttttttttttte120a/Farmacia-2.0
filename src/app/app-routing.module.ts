@@ -60,6 +60,7 @@ const routes: Routes = [
   {
     path: 'roles',
     loadChildren: () => import('./Paginas/roles/roles.module').then( m => m.RolesPageModule)
+
   },
   {
     path: 'modificarUsuario/:idUsuario',
@@ -92,7 +93,8 @@ const routes: Routes = [
   {
     path: 'e404',
     loadChildren: () => import('./Paginas/e404/e404.module').then( m => m.E404PageModule)
-  },
+  }
+
 ];
 
 @NgModule({
