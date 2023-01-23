@@ -102,17 +102,6 @@
           Los caracteres minimo son 3
         </ion-note>
       </ion-item>
-      <ion-item>
-        <ion-label>Receta</ion-label>
-        <ion-input [disabled]="imagenCargando" (change)="cargarFoto($event)" type="file" formControlName="receta"></ion-input>
-        <ion-note
-        slot="error"
-          *ngIf="campo('receta').invalid  && campo('receta').errors && campo('receta').errors.required && fueTocado('receta') "
-        >
-          Este campo es requerido
-        </ion-note>
-      </ion-item>
-
 
       <ion-item>
         <ion-button

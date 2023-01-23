@@ -30,7 +30,7 @@ export class PerfumesQfPage implements OnInit {
       precio: [0, [Validators.required, Validators.min(1)]],
       categoria: ['perfumes'],
       detalle: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(200)]],
-      receta: ['', Validators.required],
+
       cantidad: [1],
     })
   }
