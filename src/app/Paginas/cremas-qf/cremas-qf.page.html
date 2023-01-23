@@ -4,7 +4,127 @@
   </ion-header>
 
 
+
 <ion-content>
+
+  <ion-card>
+
+    <form [formGroup]="formulario" novalidate (ngSubmit)="guardarImagen()" >
+      <ion-item>
+        <ion-label>Imagen</ion-label>
+        <ion-input [disabled]="imagenCargando" (change)="cargarFoto($event)" type="file" formControlName="imagen"></ion-input>
+        <ion-note
+        slot="error"
+          *ngIf="campo('imagen').invalid  && campo('imagen').errors && campo('imagen').errors.required && fueTocado('imagen') "
+        >
+          Este campo es requerido
+        </ion-note>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Nombre</ion-label>
+        <ion-input type="text" formControlName="nombre"></ion-input>
+        <ion-note
+        slot="error"
+          *ngIf="campo('nombre').invalid  && campo('nombre').errors && campo('nombre').errors.required && fueTocado('nombre') "
+        >
+          Este campo es requerido
+        </ion-note>
+        <ion-note
+        slot="error"
+          *ngIf="campo('nombre').invalid  && campo('nombre').errors && campo('nombre').errors.maxlength && fueTocado('nombre') "
+        >
+          Los caracteres maximos son 20
+        </ion-note>
+        <ion-note
+        slot="error"
+          *ngIf="campo('nombre').invalid  && campo('nombre').errors && campo('nombre').errors.minlength && fueTocado('nombre') "
+        >
+          Los caracteres minimo son 3
+        </ion-note>
+      </ion-item>
+      <ion-item>
+        <ion-label>Precio</ion-label>
+        <ion-input type="number" formControlName="precio"></ion-input>
+        <ion-note
+        slot="error"
+          *ngIf="campo('precio').invalid  && campo('precio').errors && campo('precio').errors.required && fueTocado('precio') "
+        >
+          Este campo es requerido
+        </ion-note>
+        <ion-note
+        slot="error"
+          *ngIf="campo('precio').invalid  && campo('precio').errors && campo('precio').errors.min && fueTocado('precio') "
+        >
+          Los caracteres minimo son 3
+        </ion-note>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Nombre Detalle</ion-label>
+        <ion-input type="text" formControlName="detalle"></ion-input>
+        <ion-note
+        slot="error"
+          *ngIf="campo('detalle').invalid  && campo('detalle').errors && campo('detalle').errors.required && fueTocado('detalle') "
+        >
+          Este campo es requerido
+        </ion-note>
+        <ion-note
+        slot="error"
+          *ngIf="campo('detalle').invalid  && campo('detalle').errors && campo('detalle').errors.maxlength && fueTocado('detalle') "
+        >
+          Los caracteres maximos son 20
+        </ion-note>
+        <ion-note
+        slot="error"
+          *ngIf="campo('detalle').invalid  && campo('detalle').errors && campo('detalle').errors.minlength && fueTocado('detalle') "
+        >
+          Los caracteres minimo son 3
+        </ion-note>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">marca</ion-label>
+        <ion-input type="text" formControlName="marca"></ion-input>
+        <ion-note
+        slot="error"
+          *ngIf="campo('marca').invalid  && campo('marca').errors && campo('marca').errors.required && fueTocado('marca') "
+        >
+          Este campo es requerido
+        </ion-note>
+        <ion-note
+        slot="error"
+          *ngIf="campo('marca').invalid  && campo('marca').errors && campo('marca').errors.maxlength && fueTocado('marca') "
+        >
+          Los caracteres maximos son 20
+        </ion-note>
+        <ion-note
+        slot="error"
+          *ngIf="campo('marca').invalid  && campo('marca').errors && campo('marca').errors.minlength && fueTocado('marca') "
+        >
+          Los caracteres minimo son 3
+        </ion-note>
+      </ion-item>
+      <ion-item>
+        <ion-label>Receta</ion-label>
+        <ion-input [disabled]="imagenCargando" (change)="cargarFoto($event)" type="file" formControlName="receta"></ion-input>
+        <ion-note
+        slot="error"
+          *ngIf="campo('receta').invalid  && campo('receta').errors && campo('receta').errors.required && fueTocado('receta') "
+        >
+          Este campo es requerido
+        </ion-note>
+      </ion-item>
+
+
+      <ion-item>
+        <ion-button
+          [disabled]="formulario.invalid || imagenCargando"
+        role="submit" type="submit">
+          Guardar
+        </ion-button>
+      </ion-item>
+    </form>
+  </ion-card>
+
+
 </ion-content>
 
 
@@ -16,5 +136,3 @@
     </ion-buttons>
   </ion-toolbar>
 </ion-footer>
-
-
