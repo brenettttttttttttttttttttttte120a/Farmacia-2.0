@@ -22,7 +22,7 @@ const routes: Routes = [
   },
 
   {
-    path: 'detalle-producto',
+    path: 'detalle-producto/:idProducto',
     loadChildren: () => import('./Paginas/detalle-producto/detalle-producto.module').then( m => m.DetalleProductoPageModule)
   },
   {
@@ -42,7 +42,7 @@ const routes: Routes = [
     loadChildren: () => import('./Paginas/medio-pago/medio-pago.module').then( m => m.MedioPagoPageModule)
   },
   {
-    path: 'carrito',
+    path: 'carrito/:idUsuario',
     loadChildren: () => import('./Paginas/carrito/carrito.module').then( m => m.CarritoPageModule)
   },
   {
@@ -59,8 +59,8 @@ const routes: Routes = [
   },
   {
     path: 'roles',
-    loadChildren: () => import('./Paginas/roles/roles.module').then( m => m.RolesPageModule)
-
+    loadChildren: () => import('./Paginas/roles/roles.module').then( m => m.RolesPageModule),
+    canActivate:[IngresadoGuard]
   },
   {
     path: 'modificarUsuario/:idUsuario',

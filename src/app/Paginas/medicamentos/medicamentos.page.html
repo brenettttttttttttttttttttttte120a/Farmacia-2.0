@@ -24,9 +24,19 @@
             {{detalles.nombre}} {{detalles.marca}}
           </h1></ion-card-title>
       </ion-card-header>
+      <ion-card-content>
+        <h3 id = "card">{{detalles.categoria}}</h3>
+      <h3 id = "card"> {{detalles.precio | currency:'CLP'  }} </h3>
 
-      <h3 id = "card">{{detalles.categoria}}</h3>
-      <h3 id = "card"> ${{detalles.precio}} </h3>
+      </ion-card-content>
+      <ion-button  [routerLink]="['/detalle-producto',detalles.id]" color="success" >
+        <ion-icon name="reorder-four-outline"></ion-icon>
+      </ion-button>
+
+
+
+
+
 
     </ion-card>
   </ion-list>

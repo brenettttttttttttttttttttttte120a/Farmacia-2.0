@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IonInfiniteScroll } from '@ionic/angular';
+import { IonInfiniteScroll, ModalController } from '@ionic/angular';
+import { CarritoPage } from '../carrito/carrito.page';
 import { ApiProductoService } from '../servicios/api-producto.service';
 
 @Component({
@@ -22,6 +23,7 @@ export class CremasPage implements OnInit {
 
   constructor(
     public servicio: ApiProductoService,
+    private modalCtrl:ModalController
 
 
   ) { }
@@ -57,6 +59,15 @@ export class CremasPage implements OnInit {
         return (cart.nombre.toLowerCase().indexOf(query.toLowerCase()) > -1)||(cart.categoria.toLowerCase().indexOf(query.toLowerCase()) > -1)||(cart.marca.toLowerCase().indexOf(query.toLowerCase()) > -1);
       });
     }
+  }
+
+  async openCart(){
+    let modal= await this.modalCtrl.create({
+      component: CarritoPage,
+      cssClass: 'carrito'
+    });
+    modal.present();
+
   }
 
 

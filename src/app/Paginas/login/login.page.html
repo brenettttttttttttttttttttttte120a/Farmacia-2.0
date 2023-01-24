@@ -6,20 +6,23 @@
 </ion-toolbar>
 
 
-
 </ion-header>
 <ion-content>
+
+
+
+
   <ion-card style="text-align:center">
     <ion-card-header>
       <ion-card-title color="dark">Login</ion-card-title>
-      <ion-img src="https://static.vecteezy.com/system/resources/previews/007/438/687/non_2x/illustration-of-a-pharmacy-health-pharmacy-logo-free-vector.jpg" class="img"></ion-img>
+      <ion-img #iconoAnim src="https://static.vecteezy.com/system/resources/previews/007/438/687/non_2x/illustration-of-a-pharmacy-health-pharmacy-logo-free-vector.jpg" class="img"></ion-img>
 
     </ion-card-header>
     <ion-card-content>
       <form [formGroup]="formularioLogin">
         <ion-item  >
           <ion-label position="floating" style="font-weight:bold">Nombre</ion-label>
-          <ion-input formControlName="nombre"></ion-input>
+          <ion-input  (click)="animacion()" formControlName="nombre"></ion-input>
           <ion-note
       slot="error"
         *ngIf="campo('nombre').invalid  && campo('nombre').errors && campo('nombre').errors.required && fueTocado('nombre') "
@@ -41,7 +44,7 @@
         </ion-item>
 <ion-item>
           <ion-label position="floating" style="font-weight:bold">Contraseña</ion-label>
-          <ion-input formControlName="contraseña" type="password"></ion-input>
+          <ion-input (click)="animacion()" formControlName="contraseña" type="password"></ion-input>
           <ion-note
       slot="error"
         *ngIf="campo('contraseña').invalid  && campo('contraseña').errors && campo('contraseña').errors.required && fueTocado('contraseña') "
@@ -63,8 +66,9 @@
         </ion-item>
       </form>
       <br>
-      <ion-button (click)="ingresar()" color="danger" >
+      <ion-button color="danger" style="margin-left: 10px"  (click)="startLoad()" (click)="ingresar()">
         Ingresar
+        <ion-icon name="reload" slot="end" #loadingIcon></ion-icon>
       </ion-button>
       <ion-button [routerLink]="['/registro']"color="danger" style="margin-left: 10px">Registrarse</ion-button>
     </ion-card-content>

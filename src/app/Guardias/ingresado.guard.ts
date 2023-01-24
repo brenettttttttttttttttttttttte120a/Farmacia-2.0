@@ -18,24 +18,18 @@ export class IngresadoGuard implements CanActivate {
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
       if(localStorage.getItem('tipo')==="Quimico Farmaceutico"){
         return true;
-      }else{
-        this.navCtrl.navigateRoot('/e404')
-        return false;
-      }
-
-  }
-
-  canActivate1(
-    route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-      if(localStorage.getItem('tipo')==="admin"){
+      }else if(localStorage.getItem('tipo')==="admin"){
         return true;
-      }else{
+
+
+
+      } else {
+
         this.navCtrl.navigateRoot('/e404')
         return false;
       }
-  }
 
+  }
 
 
 }
