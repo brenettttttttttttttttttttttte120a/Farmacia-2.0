@@ -12,9 +12,6 @@ public paginaActualUsuario = 1;
 private comLista = new BehaviorSubject<Array<UsuarioConIdo>>([]);
 
 
-// Tiene que ser notificada de un cambio
-
-// Emitir un observable para todos los componentes subcritos.
 public listaUsuario$ = this.comLista.asObservable();
 
   constructor(

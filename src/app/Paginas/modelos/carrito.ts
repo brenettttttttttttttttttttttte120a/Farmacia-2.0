@@ -5,6 +5,7 @@ export interface Carrito {
   idUsuario: string;
   idProducto: number;
   cantidad: number;
+  stock:number;
 }
 
 export interface carritoConID extends Carrito{

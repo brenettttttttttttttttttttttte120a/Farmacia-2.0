@@ -2,12 +2,9 @@
   <ion-toolbar color="primary">
     <ion-title>Roles</ion-title>
 
-    <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-    </ion-buttons>
 
     <ion-toolbar color="primary">
-      <ion-searchbar color="warning" placeholder = "Buscar nombre o marca o categoria" [debounce]="1000" animated (ionChange)="handleChange($event)"></ion-searchbar>
+      <ion-searchbar color="warning" placeholder = "Buscar admin, QF o cliente" [debounce]="1000" animated (ionChange)="handleChange($event)"></ion-searchbar>
     </ion-toolbar>
   </ion-toolbar>
 
@@ -42,9 +39,20 @@
   </ion-list>
 </ion-content>
 <ion-footer>
-  <ion-toolbar >
-    <ion-buttons slot="end">
-      <ion-button [routerLink]="['/']">Salir</ion-button>
-    </ion-buttons>
+  <ion-toolbar>
+    <ion-tabs>
+      <ion-tab-bar slot="bottom">
+        <ion-tab-button [routerLink]="['/']" >
+          <ion-icon name="log-out-outline"></ion-icon>
+          <ion-label>Salir</ion-label>
+
+        </ion-tab-button>
+
+
+      </ion-tab-bar>
+    </ion-tabs>
   </ion-toolbar>
 </ion-footer>
+
+
+

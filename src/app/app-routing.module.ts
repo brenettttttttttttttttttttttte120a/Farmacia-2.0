@@ -93,6 +93,14 @@ const routes: Routes = [
   {
     path: 'e404',
     loadChildren: () => import('./Paginas/e404/e404.module').then( m => m.E404PageModule)
+  },
+  {
+    path: 'detalle-cremas/:idProducto',
+    loadChildren: () => import('./Paginas/detalle-cremas/detalle-cremas.module').then( m => m.DetalleCremasPageModule)
+  },
+  {
+    path: 'detalle-perfumes/:idProducto',
+    loadChildren: () => import('./Paginas/detalle-perfumes/detalle-perfumes.module').then( m => m.DetallePerfumesPageModule)
   }
 
 ];

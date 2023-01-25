@@ -103,5 +103,12 @@ export class ApiProductoService {
     return this.cartItemCount;
   }
 
+  stockProducto(id: number, prod: Producto) {
+    return this.http.patch(`${this.url_producto}/${id}`, prod);
+  }
+
+
+
+
 }
 

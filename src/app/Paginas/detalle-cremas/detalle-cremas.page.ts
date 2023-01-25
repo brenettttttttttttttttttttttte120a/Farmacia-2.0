@@ -1,19 +1,20 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AnimationController, ModalController } from '@ionic/angular';
+import { CarritoPage } from '../carrito/carrito.page';
+import { Carrito } from '../modelos/carrito';
+import { ProductoId } from '../modelos/productos';
 import { ApiProductoService } from '../servicios/api-producto.service';
 import { ApiUsuarioService } from '../servicios/api-usuario.service';
-import { ProductoId } from '../modelos/productos';
-import { Carrito } from '../modelos/carrito';
-import { CarritoPage } from '../carrito/carrito.page';
-import { AnimationController, ModalController } from '@ionic/angular';
 
 @Component({
-  selector: 'app-detalle-producto',
-  templateUrl: './detalle-producto.page.html',
-  styleUrls: ['./detalle-producto.page.scss'],
+  selector: 'app-detalle-cremas',
+  templateUrl: './detalle-cremas.page.html',
+  styleUrls: ['./detalle-cremas.page.scss'],
 })
-export class DetalleProductoPage implements OnInit {
+export class DetalleCremasPage implements OnInit {
+
 
   @ViewChild('cartBtn', { read: ElementRef }) cartBnt: ElementRef;
   @ViewChild('cartFabBtn', { read: ElementRef }) cartFabBnt: ElementRef;
@@ -62,7 +63,7 @@ export class DetalleProductoPage implements OnInit {
   }
 
   public id = this.apiUsuario.retornarId();
-  addToCart(nombre: string, precio: number, imagen:string, cantidad: number,stock:number){
+  addToCart(nombre: string, precio: number, imagen:string, cantidad: number, stock:number){
   this.http.get<any>(this.apiProducto.url_carrito).subscribe(data => {
     const producto = data.find((a: any) => {
       return a.idUsuario == this.id &&
@@ -164,6 +165,22 @@ export class DetalleProductoPage implements OnInit {
 
 
     };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

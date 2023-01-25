@@ -127,12 +127,20 @@
 
 </ion-content>
 
-
-
 <ion-footer>
-  <ion-toolbar >
-    <ion-buttons slot="end">
-      <ion-button [routerLink]="['/producto-qf']">Volver</ion-button>
-    </ion-buttons>
+  <ion-toolbar>
+    <ion-tabs>
+      <ion-tab-bar slot="bottom">
+        <ion-tab-button [routerLink]="['/producto-qf']" >
+          <ion-icon name="arrow-undo-outline"></ion-icon>
+          <ion-label>Volver</ion-label>
+
+        </ion-tab-button>
+
+
+
+      </ion-tab-bar>
+    </ion-tabs>
   </ion-toolbar>
 </ion-footer>
+

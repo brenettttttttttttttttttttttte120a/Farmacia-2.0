@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar >
-    <ion-title> Cremas</ion-title>
+    <ion-title> Perfumes</ion-title>
 
 
     <ion-toolbar >
@@ -30,7 +30,7 @@
       <h3 id = "card"> {{detalles.precio | currency:'CLP'  }} </h3>
 
       </ion-card-content>
-      <ion-button  [routerLink]="['/detalle-producto',detalles.id]" color="success" >
+      <ion-button  [routerLink]="['/detalle-perfumes',detalles.id]" color="success" >
         <ion-icon name="reorder-four-outline"></ion-icon>
       </ion-button>
 
@@ -39,9 +39,25 @@
   </ion-list>
 </ion-content>
 <ion-footer>
-  <ion-toolbar >
-    <ion-buttons slot="end">
-      <ion-button [routerLink]="['/producto']">Volver</ion-button>
-    </ion-buttons>
+  <ion-toolbar>
+    <ion-tabs>
+      <ion-tab-bar slot="bottom">
+        <ion-tab-button [routerLink]="['/producto']" >
+          <ion-icon name="arrow-undo-outline"></ion-icon>
+          <ion-label>Volver</ion-label>
+
+        </ion-tab-button>
+
+        <ion-tab-button [routerLink]="['/login']" >
+          <ion-icon name="person-circle" aria-hidden="true"></ion-icon>
+          <ion-label>Usuario</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button (click)="openCart()" >
+          <ion-icon name="cart" class="cart-icon"></ion-icon>
+          <ion-label>Carrito</ion-label>
+        </ion-tab-button>
+      </ion-tab-bar>
+    </ion-tabs>
   </ion-toolbar>
 </ion-footer>

@@ -75,12 +75,41 @@
   </ion-card>
 </ion-content>
 <ion-footer>
-  <ion-toolbar >
-    <ion-buttons slot="end">
-      <ion-button [routerLink]="['/producto']">Volver</ion-button>
-    </ion-buttons>
+  <ion-toolbar>
+    <ion-tabs>
+      <ion-tab-bar slot="bottom">
+        <ion-tab-button [routerLink]="['/medicamentos']" >
+          <ion-icon name="arrow-undo-outline"></ion-icon>
+          <ion-label>Volver</ion-label>
+
+        </ion-tab-button>
+
+        <ion-tab-button [routerLink]="['/']" >
+          <ion-icon name="grid-outline" aria-hidden="true"></ion-icon>
+          <ion-label>Inicio</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button (click)="openCart()" >
+          <ion-icon name="cart" class="cart-icon"></ion-icon>
+          <ion-label>Carrito</ion-label>
+        </ion-tab-button>
+      </ion-tab-bar>
+    </ion-tabs>
   </ion-toolbar>
 </ion-footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <style>

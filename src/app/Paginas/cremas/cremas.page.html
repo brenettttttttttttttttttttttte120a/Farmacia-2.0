@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar >
-    <ion-title> Cremas</ion-title>
+    <ion-title>Cremas</ion-title>
 
 
     <ion-toolbar >
@@ -24,21 +24,24 @@
             {{detalles.nombre}} {{detalles.marca}}
           </h1></ion-card-title>
       </ion-card-header>
-
       <ion-card-content>
         <h3 id = "card">{{detalles.categoria}}</h3>
       <h3 id = "card"> {{detalles.precio | currency:'CLP'  }} </h3>
 
       </ion-card-content>
-      <ion-button  [routerLink]="['/detalle-producto',detalles.id]" color="success" >
+      <ion-button  [routerLink]="['/detalle-cremas',detalles.id]" color="success" >
         <ion-icon name="reorder-four-outline"></ion-icon>
       </ion-button>
+
+
+
 
 
 
     </ion-card>
   </ion-list>
 </ion-content>
+
 <ion-footer>
   <ion-toolbar>
     <ion-tabs>

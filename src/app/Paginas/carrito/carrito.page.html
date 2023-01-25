@@ -73,6 +73,18 @@
 
   </ion-item>
 
+  <ion-segment value="default">
+    <ion-segment-button value="default" (click)="stockProductoQuitar(p)">
+      <ion-label>Confirmar</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="segment" (click)="stockProductoAgregar(p)">
+      <ion-label>Cancelar</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+
+
+
     <ion-label color="dark"> {{p.nombre}}</ion-label>
     <ion-label color="dark" style="margin-left: 68px;">{{p.cantidad* p.precio | currency:'CLP'}}</ion-label>
 

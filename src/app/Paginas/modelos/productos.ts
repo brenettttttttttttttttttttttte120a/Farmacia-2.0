@@ -7,6 +7,7 @@ export interface Producto {
   detalle:string;
   receta: string;
   cantidad:number;
+  stock:number;
 
 
 

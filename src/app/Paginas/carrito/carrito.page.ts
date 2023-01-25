@@ -109,4 +109,35 @@ export class CarritoPage implements OnInit {
   }
 
 
+  stockProductoQuitar(cart){
+    if (cart.stock > 1 ) {
+      this.cartService.stockProducto(cart.idProducto, {
+        ...this.formulario.value,
+        stock: cart.stock -=  cart.cantidad
+      })
+        .subscribe((res) => {
+          console.log(res);
+        });
+
+    } else {
+      alert("uno de los items no tiene stock")
+    }
+  }
+
+  stockProductoAgregar(cart){
+    if (cart.stock < 300) {
+      this.cartService.stockProducto(cart.idProducto, {
+        ...this.formulario.value,
+        stock: cart.stock +=  cart.cantidad
+      })
+        .subscribe((res) => {
+          console.log(res);
+        });
+
+    } else {
+      alert("Verifique uno de sus productos")
+    }
+  }
+
+
 }

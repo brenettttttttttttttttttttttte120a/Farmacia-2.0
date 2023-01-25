@@ -5,7 +5,8 @@ import { Router } from '@angular/router';
 import { Usuario } from '../modelos/usuario';
 import { ApiUsuarioService } from '../servicios/api-usuario.service';
 import { createAnimation } from '@ionic/core';
-import { AnimationController } from '@ionic/angular';
+import { AnimationController, ModalController } from '@ionic/angular';
+import { CarritoPage } from '../carrito/carrito.page';
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -27,7 +28,8 @@ export class LoginPage implements OnInit {
     private apiUsuario: ApiUsuarioService,
     private router: Router,
     private http: HttpClient,
-    private animationCtrl :AnimationController
+    private animationCtrl :AnimationController,
+    private modalCtrl:ModalController
   ) {
 
     this.formularioLogin = this.fb.group({
@@ -123,6 +125,13 @@ export class LoginPage implements OnInit {
   }
 
 
+  async openCart(){
+    let modal= await this.modalCtrl.create({
+      component: CarritoPage,
+      cssClass: 'carrito/:idUsuario'
+    });
+    modal.present();
 
+  }
 
 }
