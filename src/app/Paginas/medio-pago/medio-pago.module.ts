@@ -7,14 +7,19 @@ import { IonicModule } from '@ionic/angular';
 import { MedioPagoPageRoutingModule } from './medio-pago-routing.module';
 
 import { MedioPagoPage } from './medio-pago.page';
+import { ApiUsuarioService } from '../servicios/api-usuario.service';
+import { HttpClientModule } from '@angular/common/http';
+import { ApiProductoService } from '../servicios/api-producto.service';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    MedioPagoPageRoutingModule
+    MedioPagoPageRoutingModule,
+    HttpClientModule
   ],
-  declarations: [MedioPagoPage]
+  declarations: [MedioPagoPage],
+  providers :[ApiUsuarioService,ApiProductoService]
 })
 export class MedioPagoPageModule {}

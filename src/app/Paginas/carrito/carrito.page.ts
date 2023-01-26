@@ -5,6 +5,7 @@ import { ModalController } from '@ionic/angular';
 import { BehaviorSubject } from 'rxjs';
 import { ApiProductoService } from '../servicios/api-producto.service';
 import { ApiUsuarioService } from '../servicios/api-usuario.service';
+import { MedioPagoPage} from '../medio-pago/medio-pago.page';
 
 @Component({
   selector: 'app-carrito',
@@ -84,8 +85,12 @@ export class CarritoPage implements OnInit {
   }
 
   getTotal() {
+    this.cartService.totalCarrito(this.cart.reduce((i, j) => i + j.precio * j.cantidad, 0));
     return this.cart.reduce((i, j) => i + j.precio * j.cantidad, 0);
+
   }
+
+
 
   checkout() {
     alert("Producto comprado")
@@ -138,6 +143,16 @@ export class CarritoPage implements OnInit {
       alert("Verifique uno de sus productos")
     }
   }
+
+  async openCart(){
+    let modal= await this.modalCtrl.create({
+      component: MedioPagoPage,
+      cssClass: 'medio-pago'
+    });
+    modal.present();
+
+  }
+
 
 
 }

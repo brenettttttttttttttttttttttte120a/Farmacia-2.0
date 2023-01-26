@@ -55,6 +55,7 @@ export class LoginPage implements OnInit {
     var f = this.formularioLogin.value;
     var tipo = "Quimico Farmaceutico"
 
+
     this.http.get<any>(this.apiUsuario.url_usuario).subscribe(res => {
       const user = res.find((a: any) => {
         return a.nombre === f.nombre && a.contraseña === f.contraseña
@@ -71,6 +72,8 @@ export class LoginPage implements OnInit {
         } else if (user.tipo === "cliente") {
           this.apiUsuario.idUsuario(user.id);
           this.apiUsuario.tipoUsuario(user.tipo);
+          this.apiUsuario.ingresoUsuario('true');
+          this.apiUsuario.nombreUsuario(user.nombre);
           alert("Cliente logueado");
           this.router.navigate(['/']);
 

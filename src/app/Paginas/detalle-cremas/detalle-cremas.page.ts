@@ -25,6 +25,8 @@ export class DetalleCremasPage implements OnInit {
   public productos: Array<ProductoId> = [];
   carrito: Carrito;
   public usuarioId = '';
+  public nombreUsuario = '';
+
 
 
 
@@ -57,6 +59,7 @@ export class DetalleCremasPage implements OnInit {
     });
 
     this.usuarioId = this.apiUsuario.retornarId();
+    this.nombreUsuario = this.apiUsuario.retornarUsuario();
 
 
 
@@ -79,7 +82,8 @@ export class DetalleCremasPage implements OnInit {
           "idUsuario": this.usuarioId,
           "cantidad": producto.cantidad += 1,
           "idProducto": this.idActiva,
-          "stock":stock
+          "stock":stock,
+          "nombreUsuario":this.nombreUsuario
         }
         alert("Producto agregado al carro");
            this.apiProducto.incrementarProducto(producto.id, producto).subscribe((res)=>{
@@ -94,7 +98,8 @@ export class DetalleCremasPage implements OnInit {
                 "idUsuario": this.usuarioId,
                 "cantidad": cantidad,
                 "idProducto": this.idActiva,
-                "stock":stock
+                "stock":stock,
+                "nombreUsuario":this.nombreUsuario
               }
             this.apiProducto.addProduct(carrito);
             alert("Producto agregado al carro");

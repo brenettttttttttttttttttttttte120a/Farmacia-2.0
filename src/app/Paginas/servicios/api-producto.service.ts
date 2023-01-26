@@ -108,6 +108,13 @@ export class ApiProductoService {
   }
 
 
+  public totalCarrito(total){
+    localStorage.setItem('total carrito',total);
+
+  }
+  public retornarTotal(){
+    return localStorage.getItem('total carrito');
+  }
 
 
 }

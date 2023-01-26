@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { IngresadoGuard } from './Guardias/ingresado.guard';
+import { NoIngresadoGuard } from './Guardias/no-ingresado.guard';
 
 const routes: Routes = [
 
   {
     path: 'login',
-    loadChildren: () => import('./Paginas/login/login.module').then( m => m.LoginPageModule)
+    loadChildren: () => import('./Paginas/login/login.module').then( m => m.LoginPageModule),
+    canActivate:[NoIngresadoGuard]
   },
   {
     path: 'registro',
@@ -26,10 +28,7 @@ const routes: Routes = [
     loadChildren: () => import('./Paginas/detalle-producto/detalle-producto.module').then( m => m.DetalleProductoPageModule)
   },
   {
-    path: 'agregar-producto',
-    loadChildren: () => import('./Paginas/agregar-producto/agregar-producto.module').then( m => m.AgregarProductoPageModule)
-  },
-  {
+
     path: 'eliminar-producto',
     loadChildren: () => import('./Paginas/eliminar-producto/eliminar-producto.module').then( m => m.EliminarProductoPageModule)
   },

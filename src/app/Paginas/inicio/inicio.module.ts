@@ -7,14 +7,19 @@ import { IonicModule } from '@ionic/angular';
 import { InicioPageRoutingModule } from './inicio-routing.module';
 
 import { InicioPage } from './inicio.page';
+import { HttpClientModule } from '@angular/common/http';
+import { ApiProductoService } from '../servicios/api-producto.service';
+import { ApiUsuarioService } from '../servicios/api-usuario.service';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    InicioPageRoutingModule
+    InicioPageRoutingModule,
+    HttpClientModule
   ],
-  declarations: [InicioPage]
+  declarations: [InicioPage],
+  providers: [ApiProductoService,ApiUsuarioService]
 })
 export class InicioPageModule {}

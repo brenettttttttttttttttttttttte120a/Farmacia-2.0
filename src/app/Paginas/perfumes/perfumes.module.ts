@@ -9,6 +9,7 @@ import { PerfumesPageRoutingModule } from './perfumes-routing.module';
 import { PerfumesPage } from './perfumes.page';
 import { HttpClientModule } from '@angular/common/http';
 import { ApiProductoService } from '../servicios/api-producto.service';
+import { ApiUsuarioService } from '../servicios/api-usuario.service';
 
 @NgModule({
   imports: [
@@ -19,7 +20,7 @@ import { ApiProductoService } from '../servicios/api-producto.service';
     HttpClientModule
   ],
   declarations: [PerfumesPage],
-  providers: [ApiProductoService],
+  providers: [ApiProductoService,ApiUsuarioService],
 
 })
 export class PerfumesPageModule {}

@@ -70,7 +70,21 @@ public agregarUsuario(usuario: Usuario){
     return localStorage.getItem('tipo');
   }
 
+  public ingresoUsuario(id){
+    localStorage.setItem('tipoIngreso', id);
+  }
 
+  public retornarIngreso(){
+    return localStorage.getItem('tipoIngreso');
+  }
+
+  public nombreUsuario(id){
+    localStorage.setItem('nombreUsuario', id);
+  }
+
+  public retornarUsuario(){
+    return localStorage.getItem('nombreUsuario');
+  }
 
 }
 

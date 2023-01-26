@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiProductoService } from '../servicios/api-producto.service';
+import { ApiUsuarioService } from '../servicios/api-usuario.service';
 
 @Component({
   selector: 'app-medio-pago',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MedioPagoPage implements OnInit {
 
-  constructor() { }
+  public nombreUsuario = '';
+  public totalCarrito='';
+
+  constructor(
+    private apiUsuario :ApiUsuarioService,
+    private apiProducto:ApiProductoService
+  ) { }
 
   ngOnInit() {
+
+  this.nombreUsuario=this.apiUsuario.retornarUsuario();
+  this.totalCarrito=this.apiProducto.retornarTotal();
+  }
+
+  checkout() {
+    alert("Producto comprado")
   }
 
 }

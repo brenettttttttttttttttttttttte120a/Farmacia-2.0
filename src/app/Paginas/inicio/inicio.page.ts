@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { AlertController, ModalController, NavController } from '@ionic/angular';
 import { CarritoPage } from '../carrito/carrito.page';
 
 @Component({
@@ -10,7 +10,9 @@ import { CarritoPage } from '../carrito/carrito.page';
 export class InicioPage implements OnInit {
 
   constructor(
-  private modalCtrl: ModalController
+  private modalCtrl: ModalController,
+  private navCtrl:NavController,
+  private alertControler:AlertController
 
   ) { }
 
@@ -21,12 +23,37 @@ export class InicioPage implements OnInit {
     });
     modal.present();
 
+
+
+
 }
 
   ngOnInit() {
   }
 
+async salir(){
+    const alert= await this.alertControler.create({
+      header:'Cerrar Sesión',
+      message:'¿Realmente quieres cerrar sesión?',
+      buttons: [
+        {
+          text:'No',
+          handler:() =>{
 
+          }
+        },
+        {
+          text: 'Si',
+          handler:()=>{
+            this.navCtrl.navigateRoot('/login');
+            localStorage.clear();
+          }
+        }
+      ]
+
+    });
+    await alert.present();
+  }
 
 
 }
